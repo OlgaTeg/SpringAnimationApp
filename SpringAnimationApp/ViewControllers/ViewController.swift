@@ -13,60 +13,29 @@ class ViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet var springAnimationView: SpringView!
     
-    @IBOutlet weak var presetLabel: UILabel!
-    @IBOutlet weak var curveLabel: UILabel!
-    @IBOutlet weak var forceLabel: UILabel!
-    @IBOutlet weak var delayLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
-    
-    @IBOutlet var buttonName: UIButton!
-    
+    @IBOutlet var descriptionLabel: UILabel!
+  
     // MARK: - Private Properties
-    private var randomAnimation = Animation()
-    private var animationStarted = false
-    
+    private var animation = Animation.getRandomAnimation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        randomAnimation = randomAnimation.getRandomAnimation()
-        setLabelsValue(animation: randomAnimation)
-        
+        descriptionLabel.text = animation.description
     }
-    
+
     // MARK: - IBAction
-    @IBAction func startAnimationButton() {
-        springAnimationView.animate()
-        runAnimation()
-    }
-}
-
-
-// MARK: - Private Methods
-extension ViewController {
     
-    private func setLabelsValue(animation: Animation) {
-        presetLabel.text = "Preset: " + animation.preset
-        curveLabel.text = "Curve: " + animation.curve
-        forceLabel.text = "Force: " + String.init(format: "%.2F", animation.force)
-        delayLabel.text = "Delay: " + String.init(format: "%.2F", animation.delay)
-        durationLabel.text = "Duration: " + String.init(format: "%.2F", animation.duration)
-    }
-    
-    private func runAnimation() {
-        setLabelsValue(animation: randomAnimation)
+    @IBAction func runAnimationButton(_ sender: UIButton) {
+        descriptionLabel.text = animation.description
         
-        springAnimationView.animation = randomAnimation.preset
-        springAnimationView.curve = randomAnimation.curve
-        springAnimationView.force = randomAnimation.force
-        springAnimationView.delay = randomAnimation.delay
-        springAnimationView.duration = randomAnimation.duration
+        springAnimationView.animation = animation.preset
+        springAnimationView.curve = animation.curve
+        springAnimationView.force = CGFloat(animation.force)
+        springAnimationView.duration = CGFloat(animation.duration)
+        springAnimationView.delay = CGFloat(animation.delay)
         springAnimationView.animate()
         
-        randomAnimation = randomAnimation.getRandomAnimation()
-        setButtonTitle(animation: randomAnimation)
-    }
-    
-    private func setButtonTitle(animation: Animation) {
-        buttonName.setTitle("Run \(animation.preset)", for: .normal)
+        animation = Animation.getRandomAnimation()
+        sender.setTitle("Run \(animation.preset)", for: .normal)
     }
 }

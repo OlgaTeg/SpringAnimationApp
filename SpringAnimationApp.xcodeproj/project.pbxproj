@@ -15,6 +15,7 @@
 		077B394A29435D3400048E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077B394829435D3400048E24 /* LaunchScreen.storyboard */; };
 		077B3953294362E700048E24 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 077B3952294362E700048E24 /* SpringAnimation */; };
 		077B39572945F19200048E24 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B39562945F19200048E24 /* Animation.swift */; };
+		077B395E29477D2900048E24 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B395D29477D2900048E24 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		077B394929435D3400048E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		077B394B29435D3400048E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		077B39562945F19200048E24 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		077B395D29477D2900048E24 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 		077B393C29435D3200048E24 /* SpringAnimationApp */ = {
 			isa = PBXGroup;
 			children = (
-				077B39592946269300048E24 /* App */,
+				077B395F29477D2F00048E24 /* Services */,
 				077B39582946267F00048E24 /* Models */,
+				077B39592946269300048E24 /* App */,
 				077B395A294626A300048E24 /* ViewControllers */,
 				077B395B294626C700048E24 /* Storyboards */,
 				077B395C2946270100048E24 /* Resources */,
@@ -110,6 +113,14 @@
 				077B394629435D3400048E24 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		077B395F29477D2F00048E24 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				077B395D29477D2900048E24 /* DataStore.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				077B394229435D3200048E24 /* ViewController.swift in Sources */,
 				077B393E29435D3200048E24 /* AppDelegate.swift in Sources */,
 				077B394029435D3200048E24 /* SceneDelegate.swift in Sources */,
+				077B395E29477D2900048E24 /* DataStore.swift in Sources */,
 				077B39572945F19200048E24 /* Animation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
